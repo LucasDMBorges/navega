@@ -1,3 +1,5 @@
+//flex
+@import "/node_modules/primeflex/primeflex.css";
 //icons
 @import "primeicons/primeicons.css";
 //fonts
@@ -12,17 +14,22 @@
 @text-color-white: var(--color-white-100, #FFF);
 @text-color-blue: var(--color-primary-60, #1AAAB2);
 @font-size: 14px;
+@label-font-size: 12px;
 //button
 @button-border-radius: var(--border-radius-xs, 4px);
 @button-border: 1px solid var(--color-primary-60, #1AAAB2);
 @button-background-color: var(--color-primary-60, #1AAAB2);
-@button-padding: 0px var(--spacing-xxs, 16px);
+@button-padding: var(--spacing-xxs, 10px);
 @button-max-width: var(--max-width-web, 272px);
+//spacing
+@spacing-0: var(--spacing-none, 0px);
+//image
+@background-image: url('./assets/images/background.png');
 
 * {
     font-family: @font-family;
-    margin: 0;
-    padding: 0;
+    margin: @spacing-0;
+    padding: @spacing-0;
 }
 
 h1 {
@@ -43,6 +50,10 @@ p {
 
     font-family: @font-family;
     font-size: @font-size;
+
+    &.text-small {
+        font-size: @label-font-size;
+    }
 
     &.gray {
         color: @text-color-gray;
@@ -69,7 +80,58 @@ button {
     background-color: @button-background-color;
     color: @text-color-white;
     padding: @button-padding;
-    max-width: @button-max-width;
     font-size: @font-size;
     font-weight: @button-font-weigh;
+    max-width: var(--max-width-web, 272px);
+    width: 272px;
+    height: 40px;
+}
+
+main {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    &.flex {
+        gap: var(--spacing-gap-sm, 10px);
+    }
+}
+
+section {
+    &.flex {
+        gap: var(--spacing-gap-sm, 32px);
+    }
+
+}
+
+aside {
+    background-image: @background-image;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+footer {
+    margin-top: auto;
+    gap: var(--spacing-gap-xxs, 16px);
+}
+
+div {
+    &.p-inputgroup {
+        margin-top: 16px;
+        border-bottom: 1px solid var(--color-gray-90, #464646);
+        width: 312px;
+
+        label {
+            font-size: @label-font-size;
+        }
+
+        input {
+            font-size: @font-size;
+            width: 90%;
+            border: none;
+        }
+    }
 }
