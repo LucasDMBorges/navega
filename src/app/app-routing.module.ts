@@ -1,7 +1,7 @@
-import { DASHBOARD_ROUTES } from './pages/dashboard/dashboard-routing.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { authGuard } from './services/guards/usuario-autenticado.guard';
 
 const routes: Routes = [
   {
@@ -15,6 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
+    canActivate: [authGuard],
     loadChildren: () =>
       import('./pages/dashboard/dashboard-routing.module').then(
         (mod) => mod.DASHBOARD_ROUTES

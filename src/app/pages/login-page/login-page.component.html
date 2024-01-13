@@ -13,25 +13,46 @@
         <p>início ao seu acesso.</p>
       </div>
     </body>
-    <form>
+    <form [formGroup]="form">
       <div class="p-inputgroup flex flex-column">
         <label for="">Email ou CPF</label>
         <span class="p-input-icon-right">
-          <input type="text" pInputText />
-          <i class="pi pi-check-circle ml-2"></i>
+          <input formControlName="email" type="text" pInputText />
+          <i class="pi pi-check-circle ml-2" style="font-size: 1rem"></i>
         </span>
       </div>
       <div class="p-inputgroup flex flex-column">
         <label for="">Senha</label>
         <span class="p-input-icon-right">
-          <input type="text" pInputText />
-          <i class="pi pi-check-circle ml-2"></i>
+          <input
+            formControlName="senha"
+            type="{{ passwordVisible ? 'text' : 'password' }}"
+            pInputText
+          />
+          <i
+            class="ml-2 cursor-pointer {{
+              passwordVisible ? 'pi pi-check-circle ' : 'pi pi-eye'
+            }}"
+            style="font-size: 1rem"
+            (click)="togglePassword()"
+          ></i>
         </span>
       </div>
     </form>
     <footer class="flex flex-column align-items-center">
-      <button>ACESSAR</button>
-      <p>Esqueceu a senha?<span class="link ml-2">Acesse aqui</span></p>
+      <button
+        pButton
+        pRipple
+        label="ACESSAR"
+        class="navega-primary"
+        (click)="login()"
+        [disabled]="form.invalid"
+      ></button>
+      <p>
+        Esqueceu a senha?<span class="link ml-2 cursor-pointer"
+          >Acesse aqui</span
+        >
+      </p>
       <p class="text-small">Versão 0.01</p>
     </footer>
   </section>
@@ -46,3 +67,4 @@
     </body>
   </aside>
 </main>
+<p-toast></p-toast>
