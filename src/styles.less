@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+//text
+@font-family: 'Poppins';
+@title-font-size: 16px;
+@title-font-weight: 600;
+@link-font-weight: 400;
+@button-font-weigh: 700;
+@text-color-gray: var(--color-gray-90, #464646);
+@text-color-white: var(--color-white-100, #FFF);
+@text-color-blue: var(--color-primary-60, #1AAAB2);
+@font-size: 14px;
+//button
+@button-border-radius: var(--border-radius-xs, 4px);
+@button-border: 1px solid var(--color-primary-60, #1AAAB2);
+@button-background-color: var(--color-primary-60, #1AAAB2);
+@button-padding: 0px var(--spacing-xxs, 16px);
+@button-max-width: var(--max-width-web, 272px);
+
+* {
+    font-family: @font-family;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: @font-family;
+    font-weight: @title-font-weight;
+    font-size: @title-font-size;
+
+    &.gray {
+        color: @text-color-gray;
+    }
+
+    &.white {
+        color: @text-color-white;
+    }
+}
+
+p {
+
+    font-family: @font-family;
+    font-size: @font-size;
+
+    &.gray {
+        color: @text-color-gray;
+    }
+
+    &.white {
+        color: @text-color-white;
+    }
+}
+
+span {
+    font-family: @font-family;
+    font-size: @font-size;
+
+    &.link {
+        color: @text-color-blue;
+        font-weight: @link-font-weight;
+    }
+}
+
+button {
+    border-radius: @button-border-radius;
+    border: @button-border;
+    background-color: @button-background-color;
+    color: @text-color-white;
+    padding: @button-padding;
+    max-width: @button-max-width;
+    font-size: @font-size;
+    font-weight: @button-font-weigh;
+}
