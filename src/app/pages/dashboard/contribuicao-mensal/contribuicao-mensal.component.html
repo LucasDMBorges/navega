@@ -1,1 +1,78 @@
-<p>contribuicao-mensal works!</p>
+<section class="flex flex-column align-items-center gap-big mt-4">
+  <header class="flex flex-column align-items-center">
+    <p>Total em contribuições</p>
+    <h1 class="font-big">R$ 999.999,99</h1>
+  </header>
+  <div class="flex justify-content-center">
+    <p-chart type="doughnut" [data]="data" [options]="options"></p-chart>
+  </div>
+  <footer class="flex flex-column align-items-center">
+    <div class="flex flex-row align-items-center gap-1">
+      <i class="pi pi-circle-fill pink"></i>
+      <p>Contribuição mensal</p>
+    </div>
+    <h1>R$ 499.999,99</h1>
+    <div class="flex flex-row align-items-center gap-1">
+      <i class="pi pi-circle-fill purple"></i>
+      <p>Contribuição voluntária</p>
+    </div>
+    <h1>R$ 499.999,99</h1>
+  </footer>
+</section>
+<p-divider [style]="{ color: '#BDBDBD' }"></p-divider>
+<section>
+  <p-listbox [options]="cards" optionLabel="name" [style]="{ border: 'none' }">
+    <ng-template let-card pTemplate="item">
+      <div class="w-full card">
+        <header
+          class="flex align-items-center justify-content-start gap-2 w-full"
+        >
+          <picture>
+            <img src="{{ card.icon }}" alt="Icone olho" class="mr-2" />
+          </picture>
+          <div>
+            <p>{{ card.name }}</p>
+          </div>
+          <div>
+            <i
+              class="ml-2 cursor-pointer pi pi-angle-right"
+              style="font-size: 1rem"
+            ></i>
+          </div>
+        </header>
+        <p-divider></p-divider>
+        <body>
+          <section
+            class="flex justify-content-between"
+            *ngIf="card.contribuition_value"
+          >
+            <p>Valor da contribuição</p>
+            <h1>{{ card.contribuition_value }}</h1>
+          </section>
+          <section
+            class="flex justify-content-between"
+            *ngIf="card.contribuition_porcentagem"
+          >
+            <p>Porcentagem do salário</p>
+            <h1>{{ card.contribuition_porcentagem }}</h1>
+          </section>
+        </body>
+        <footer>
+          <button
+            pButton
+            class="button-navega white"
+            label="ALTERAR CONTRIBUIÇÃO"
+          ></button>
+        </footer>
+      </div>
+    </ng-template>
+  </p-listbox>
+  <footer class="flex flex-column align-items-center">
+    <button
+      pButton
+      pRipple
+      label="INCLUIR CONTRIBUIÇÃO"
+      class="button-navega primary"
+    ></button>
+  </footer>
+</section>
