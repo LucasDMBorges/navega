@@ -1,12 +1,18 @@
-<app-header class="row-1"></app-header>
-<main class="row-2 col-8 col-offset-2">
-  <p-breadcrumb class="max-w-full" [model]="items" [home]="home"></p-breadcrumb>
-  <section class="grid">
-    <div class="col-4">
-      <app-sidebar> </app-sidebar>
-    </div>
-    <div class="col-8">
-      <app-contribuicao-mensal></app-contribuicao-mensal>
-    </div>
-  </section>
-</main>
+<div class="grid">
+  <app-header class="row-1 w-full"></app-header>
+  <main class="row-2 col-8 col-offset-2">
+    <p-breadcrumb
+      class="max-w-full"
+      [model]="items"
+      [home]="home"
+    ></p-breadcrumb>
+    <section class="grid">
+      <div class="col-4">
+        <app-sidebar> </app-sidebar>
+      </div>
+      <div class="col-8">
+        <app-contribuicao-mensal></app-contribuicao-mensal>
+      </div>
+    </section>
+  </main>
+</div>
