@@ -1,1 +1,25 @@
-<p>sidebar works!</p>
+<section class="flex flex-column align-items-center mt-4 mb-2 gap-small">
+  <i class="pi pi-id-card primary" style="font-size: 2.5rem"></i>
+  <h1>Meu plano</h1>
+  <p>O que você quer fazer?</p>
+</section>
+<p-listbox [options]="pages" optionLabel="name" [style]="{ border: 'none' }">
+  <ng-template let-page pTemplate="item">
+    <div class="flex align-items-center justify-content-start gap-2 w-full">
+      <picture>
+        <img src="{{ page.icon }}" alt="Icone olho" class="mr-2" />
+      </picture>
+      <div class="{{ page.name === 'Contribuição Mensal' ? 'primary' : '' }}">
+        {{ page.name }}
+      </div>
+    </div>
+    <div>
+      <i
+        class="ml-2 cursor-pointer pi pi-angle-right {{
+          page.name === 'Contribuição Mensal' ? 'primary' : ''
+        }}"
+        style="font-size: 1rem"
+      ></i>
+    </div>
+  </ng-template>
+</p-listbox>
