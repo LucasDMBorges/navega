@@ -1,6 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HeaderComponent } from '../../components/header/header.component';
 import { DashboardComponent } from './dashboard.component';
+
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SidebarComponent } from 'src/app/components/sidebar/sidebar.component';
+import { ContribuicaoMensalComponent } from './contribuicao-mensal/contribuicao-mensal.component';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -8,8 +11,16 @@ describe('DashboardComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DashboardComponent]
-    });
+      imports: [
+        DashboardComponent,
+        HeaderComponent,
+        SidebarComponent,
+        ContribuicaoMensalComponent,
+      ],
+    }).compileComponents();
+  });
+
+  beforeEach(() => {
     fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

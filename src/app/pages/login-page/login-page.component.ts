@@ -35,8 +35,8 @@ export class LoginPageComponent {
   public passwordVisible = false;
 
   constructor(
-    private fb: FormBuilder,
     private userService: UserService,
+    private fb: FormBuilder,
     private messageService: MessageService
   ) {}
 

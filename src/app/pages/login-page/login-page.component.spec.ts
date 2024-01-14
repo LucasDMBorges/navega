@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LoginPageComponent } from './login-page.component';
+import { MessageService } from 'primeng/api';
+import { FormBuilder } from '@angular/forms';
+import { UserService } from '../../services/user.service';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('LoginPageComponent', () => {
   let component: LoginPageComponent;
@@ -8,7 +11,13 @@ describe('LoginPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [LoginPageComponent]
+      imports: [
+        LoginPageComponent,
+        MessageService,
+        UserService,
+        FormBuilder,
+        RouterTestingModule,
+      ],
     });
     fixture = TestBed.createComponent(LoginPageComponent);
     component = fixture.componentInstance;
