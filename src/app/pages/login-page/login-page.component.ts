@@ -45,7 +45,6 @@ export class LoginPageComponent {
     if (this.form.invalid) return;
     const usuario = this.form.getRawValue() as Usuario;
     this.usuarioService.logar(usuario).subscribe((res) => {
-      console.log(res);
       if (!res.sucesso) {
         this.messageService.add({
           severity: 'error',

@@ -32,7 +32,6 @@ export class UsuarioService {
   }
 
   private mockUsuarioLogin(usuario: Usuario): Observable<RetornoMock> {
-    console.log(usuario);
     let retornoMock: RetornoMock = {
       sucesso: false,
       usuario: {
