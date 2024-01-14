@@ -1,27 +1,25 @@
 # Navega
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
+Projeto criado com [Angular CLI](https://github.com/angular/angular-cli) versão 16.2.5.  
+Biblioteca de componentes utilizada foi [PrimeNG](https://www.primefaces.org/primeng-v16-lts/installation) versão versão 16 lts.  
+O pré-processador css escolhido foi o [Less](https://lesscss.org/).  
+A ferramenta de teste foi o [Jest](https://jestjs.io/pt-BR/docs/getting-started).  
 
-## Development server
+## Instalação do projeto  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Rode o comando `npm install` para instalar as dependencias do projeto.
 
-## Code scaffolding
+## Executar o projeto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Rode o comando `npm run start` para um dev server. Acesse a url `http://localhost:4200/`.  
 
-## Build
+## Executar os testes  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Rode o comando `npm test` para rodas os tests do jest.  
 
-## Running unit tests
+## Observações  
+Escolhi o jest e o less sem conhecimento prévio como já havia mencionado, mas tentei seguir as melhores práticas e as documentações.  
+A configuração do Jest apresentou um erro na importação dos serviços que não consegui solucionar.  
+A visualização responsiva foi feita apenas para celular e desktop.  
+Busquei atender todos os critérios do documento passado, espero que gostem e agradeço a oportunidade.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
