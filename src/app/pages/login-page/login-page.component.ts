@@ -9,7 +9,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Usuario } from 'src/app/models/usuario.model';
+import { Usuario } from 'src/app/shared/models/usuario.model';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { MessageService } from 'primeng/api';
 
@@ -19,7 +19,6 @@ import { MessageService } from 'primeng/api';
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.less'],
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     FormsModule,
     InputTextModule,
@@ -43,6 +42,7 @@ export class LoginPageComponent {
   ) {}
 
   login() {
+    if (this.form.invalid) return;
     const usuario = this.form.getRawValue() as Usuario;
     this.usuarioService.logar(usuario).subscribe((res) => {
       console.log(res);

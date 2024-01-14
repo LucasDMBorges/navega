@@ -1,9 +1,9 @@
 <main class="grid">
-  <section class="col-4 flex flex-column align-items-center">
+  <section class="col-4 flex flex-column align-items-center gap-big">
     <picture>
       <img src="../../../assets/svg/Logo.svg" alt="Logo Navega" />
     </picture>
-    <body class="flex flex-column align-items-center">
+    <section class="flex flex-column align-items-center gap-small">
       <div class="title flex flex-column align-items-center">
         <h1>Boas-vindas ao Portal!</h1>
         <h1>Para começar, qual seu email ou CPF?</h1>
@@ -12,7 +12,7 @@
         <p>Precisamos desta confirmação para dar</p>
         <p>início ao seu acesso.</p>
       </div>
-    </body>
+    </section>
     <form [formGroup]="form">
       <div class="p-inputgroup flex flex-column">
         <label for="">Email ou CPF</label>
@@ -28,6 +28,7 @@
             formControlName="senha"
             type="{{ passwordVisible ? 'text' : 'password' }}"
             pInputText
+            (keyup.enter)="login()"
           />
           <i
             class="ml-2 cursor-pointer {{
@@ -39,12 +40,12 @@
         </span>
       </div>
     </form>
-    <footer class="flex flex-column align-items-center">
+    <footer class="flex flex-column align-items-center footer-login-page">
       <button
         pButton
         pRipple
         label="ACESSAR"
-        class="navega-primary"
+        class="button-navega primary"
         (click)="login()"
         [disabled]="form.invalid"
       ></button>

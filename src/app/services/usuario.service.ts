@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { RetornoMock, Usuario } from '../models/usuario.model';
+import { RetornoMock, Usuario } from '../shared/models/usuario.model';
 import { Router } from '@angular/router';
 import { Observable, of, tap } from 'rxjs';
 
