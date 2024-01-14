@@ -1,5 +1,5 @@
 <div class="grid">
-  <app-header class="row-1 w-full"></app-header>
+  <app-header class="row-1 w-full header"></app-header>
   <main class="row-2 col-8 col-offset-2">
     <p-breadcrumb
       class="max-w-full"
@@ -7,10 +7,10 @@
       [home]="home"
     ></p-breadcrumb>
     <section class="grid">
-      <div class="col-4">
+      <div class="col-4 sidebar">
         <app-sidebar> </app-sidebar>
       </div>
-      <div class="col-8">
+      <div class="col-12 sm:col-12 md:col-12 lg:col-8 xl:col-8">
         <app-contribuicao-mensal></app-contribuicao-mensal>
       </div>
     </section>

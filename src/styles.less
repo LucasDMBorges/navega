@@ -25,7 +25,7 @@
 @button-border: 1px solid;
 @button-background-color: @blue;
 @button-padding: var(--spacing-xxs, 10px);
-@button-max-width: var(--max-width-web, 272px);
+@button-max-width: var(--max-width-web, 200px);
 //spacing
 @spacing-0: var(--spacing-none, 0px);
 @max-width: 100vw;
@@ -92,10 +92,6 @@ main {
     display: block;
     width: calc(@max-width);
     height: calc(@max-height - @-header);
-
-    &.container {
-        width: 80%;
-    }
 }
 
 body {
@@ -186,18 +182,6 @@ div {
     width: @max-width;
 }
 
-.container {
-    position: absolute;
-
-    height: calc(@max-height - @-header);
-
-    top: 52%;
-
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-}
-
 .card {
     border-radius: 10px;
     border: 1px solid @gray-light;
@@ -213,4 +197,53 @@ div {
     border: none;
     border-radius: 0px;
     border-bottom: 1px solid @gray-light;
+}
+
+@media (max-width: 992px) {
+    .router-outlet {
+        max-height: 668px;
+        max-width: 992px;
+    }
+
+    aside {
+        display: none;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .header {
+        display: none;
+    }
+
+}
+
+@media (max-width: 400px) {
+    * {
+        font-size: 14px;
+        gap: 0px;
+    }
+
+    .router-outlet {
+        max-height: 667px;
+        max-width: 400px;
+    }
+
+    aside {
+        display: none;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .col-offset-2 {
+        width: 100%;
+    }
+
 }

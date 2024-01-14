@@ -1,5 +1,7 @@
 <main class="grid">
-  <section class="col-4 flex flex-column align-items-center gap-big">
+  <section
+    class="col-12 sm:col-12 md:col-12 lg:col-4 xl:col-4 flex flex-column align-items-center gap-big"
+  >
     <picture>
       <img src="../../../assets/svg/Logo.svg" alt="Logo Navega" />
     </picture>
@@ -57,7 +59,7 @@
       <p class="text-small">Versão 0.01</p>
     </footer>
   </section>
-  <aside class="col-8">
+  <aside class="xl:col-8">
     <body class="flex flex-column align-items-center">
       <picture class=""
         ><img
@@ -68,4 +70,6 @@
     </body>
   </aside>
 </main>
-<p-toast></p-toast>
+<p-toast
+  [breakpoints]="{ '400px': { width: '100%', right: '0', left: '0' } }"
+></p-toast>
