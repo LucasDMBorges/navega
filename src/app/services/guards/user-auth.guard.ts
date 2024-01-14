@@ -5,13 +5,13 @@ import {
   Router,
   RouterStateSnapshot,
 } from '@angular/router';
-import { UsuarioService } from '../usuario.service';
+import { UserService } from '../user.service';
 
 export const authGuard: CanActivateFn = (
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot
 ) => {
-  return inject(UsuarioService).logado()
+  return inject(UserService).isLogged()
     ? true
     : inject(Router).createUrlTree(['/login']);
 };

@@ -1,5 +1,4 @@
 import { ButtonModule } from 'primeng/button';
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
@@ -9,8 +8,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Usuario } from 'src/app/shared/models/usuario.model';
-import { UsuarioService } from 'src/app/services/usuario.service';
+import { User } from 'src/app/shared/models/user.model';
+import { UserService } from 'src/app/services/user.service';
 import { MessageService } from 'primeng/api';
 
 @Component({
@@ -30,21 +29,21 @@ import { MessageService } from 'primeng/api';
 export class LoginPageComponent {
   public form = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
-    senha: ['', [Validators.required]],
+    password: ['', [Validators.required]],
   });
 
   public passwordVisible = false;
 
   constructor(
     private fb: FormBuilder,
-    private usuarioService: UsuarioService,
+    private userService: UserService,
     private messageService: MessageService
   ) {}
 
   login() {
     if (this.form.invalid) return;
-    const usuario = this.form.getRawValue() as Usuario;
-    this.usuarioService.logar(usuario).subscribe((res) => {
+    const user = this.form.getRawValue() as User;
+    this.userService.login(user).subscribe((res) => {
       if (!res.sucesso) {
         this.messageService.add({
           severity: 'error',
