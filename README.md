@@ -23,3 +23,6 @@ A configuração do Jest apresentou um erro na importação dos serviços que n�
 A visualização responsiva foi feita apenas para celular e desktop.  
 Busquei atender todos os critérios do documento passado, espero que gostem e agradeço a oportunidade.
 
+## Login  
+Para fazer login utilize o email `lucas.dean@navega.com` e a senha `1234`
+
