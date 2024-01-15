@@ -1,3 +1,5 @@
+import { User } from './../../shared/models/user.model';
+import { UserService } from './../../services/user.service';
 import { ButtonModule } from 'primeng/button';
 import { Component } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
@@ -8,8 +10,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { User } from 'src/app/shared/models/user.model';
-import { UserService } from 'src/app/services/user.service';
+
 import { MessageService } from 'primeng/api';
 
 @Component({
